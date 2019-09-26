@@ -24,7 +24,8 @@ export default class Login extends Component {
     return (
       <Fragment>
         <View style={styles.container}>
-          <Image style={styles.logo} source={require('../../assets/cramming.jpg')} />
+          <Image style={styles.background} source={require('../../assets/LoginB.jpg')} />
+          <Image style={styles.logo} source={require('../../assets/Aide.png')} />
           <View style={styles.form}>
             <FormTextInput
               value={this.state.email}
@@ -34,7 +35,7 @@ export default class Login extends Component {
               value={this.state.password}
               onChangeText={(password) => this.setState({ password })}
               placeholder="Password" />
-            <Button label="Logine" onPress={() => this.handleLoginPress()} />
+            <Button label="Login" onPress={() => this.handleLoginPress()} />
           </View>
         </View>
       </Fragment>
@@ -50,13 +51,23 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between"
   },
-  logo: {
+  background: {
     flex: 1,
     width: "100%",
-    resizeMode: "contain",
-    alignSelf: "center"
+    height: "100%",
+    resizeMode: "cover",
+    alignSelf: "center",
+    position: "absolute"
+  },
+  logo: {
+    width: "40%",
+    height: "30%",
+    position: "absolute",
+    top: 20,
+    resizeMode: "contain"
   },
   form: {
+    marginTop: 80,
     flex: 1,
     justifyContent: "center",
     width: "80%"
